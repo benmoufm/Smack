@@ -11,6 +11,7 @@
 		864086E1200CBBD900F71DF1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864086E0200CBBD900F71DF1 /* ChatViewController.swift */; };
 		864086E3200CBBEA00F71DF1 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864086E2200CBBEA00F71DF1 /* ChannelViewController.swift */; };
 		864086E5200CC1B300F71DF1 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864086E4200CC1B300F71DF1 /* GradientView.swift */; };
+		864086E8200D03D200F71DF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864086E7200D03D200F71DF1 /* Constants.swift */; };
 		86749F81200CABBB003BE601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86749F80200CABBB003BE601 /* AppDelegate.swift */; };
 		86749F86200CABBB003BE601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86749F84200CABBB003BE601 /* Main.storyboard */; };
 		86749F88200CABBB003BE601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86749F87200CABBB003BE601 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		864086E0200CBBD900F71DF1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		864086E2200CBBEA00F71DF1 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		864086E4200CC1B300F71DF1 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		864086E7200D03D200F71DF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		86749F7D200CABBB003BE601 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86749F80200CABBB003BE601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86749F85200CABBB003BE601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		864086E6200D03C400F71DF1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				864086E7200D03D200F71DF1 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		86749F74200CABBB003BE601 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 		86749F7F200CABBB003BE601 /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				864086E6200D03C400F71DF1 /* Utilities */,
 				864086D8200CB8B300F71DF1 /* Supported Files */,
 				864086DF200CBBBB00F71DF1 /* Model */,
 				864086DE200CBBB000F71DF1 /* View */,
@@ -270,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86749F81200CABBB003BE601 /* AppDelegate.swift in Sources */,
+				864086E8200D03D200F71DF1 /* Constants.swift in Sources */,
 				864086E1200CBBD900F71DF1 /* ChatViewController.swift in Sources */,
 				864086E5200CC1B300F71DF1 /* GradientView.swift in Sources */,
 				864086E3200CBBEA00F71DF1 /* ChannelViewController.swift in Sources */,
