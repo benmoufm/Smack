@@ -321,6 +321,7 @@
                                 <state key="normal" image="closeButton"/>
                                 <connections>
                                     <action selector="closeButtonPressed:" destination="4VL-zC-RXi" eventType="touchUpInside" id="E0V-lY-wwG"/>
+                                    <action selector="closeButtonPressed:" destination="x5x-NV-Z8Q" eventType="touchUpInside" id="MHg-FO-jv5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwd-0R-SkJ">
@@ -454,8 +455,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4vr-sS-AGN"/>
                     </view>
+                    <connections>
+                        <segue destination="iXS-Pp-XrO" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="gyH-w0-UkY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMO-ro-Oh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iXS-Pp-XrO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2909.5999999999999" y="-236.13193403298354"/>
         </scene>
