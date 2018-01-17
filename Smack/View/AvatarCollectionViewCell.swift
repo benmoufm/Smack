@@ -8,6 +8,29 @@
 
 import UIKit
 
+enum AvartarType {
+    case dark
+    case light
+
+    var description: String {
+        switch self {
+        case .dark:
+            return "dark"
+        case .light:
+            return "light"
+        }
+    }
+
+    var color: CGColor {
+        switch self {
+        case .dark:
+            return UIColor.lightGray.cgColor
+        case .light:
+            return UIColor.gray.cgColor
+        }
+    }
+}
+
 class AvatarCollectionViewCell: UICollectionViewCell {
 
     // Outlets
@@ -16,6 +39,11 @@ class AvatarCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpView()
+    }
+
+    func configureCell(index: Int, avatarType: AvartarType) {
+        avatarImageView.image = UIImage(named: "\(avatarType.description)\(index)")
+        layer.backgroundColor = avatarType.color
     }
 
     func setUpView() {
