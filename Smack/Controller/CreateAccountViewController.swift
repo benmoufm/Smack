@@ -19,6 +19,7 @@ class CreateAccountViewController: UIViewController {
     // Variables
     var avatarName = "profileDefault"
     var avatarColor = "[0.5, 0.5, 0.5, 1]"
+    var backgroundColor: UIColor?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,9 @@ class CreateAccountViewController: UIViewController {
         if UserDataService.instance.avatarName != "" {
             userImageView.image = UIImage(named: UserDataService.instance.avatarName)
             avatarName = UserDataService.instance.avatarName
+            if avatarName.contains("light") && backgroundColor == nil {
+                userImageView.backgroundColor = UIColor.lightGray
+            }
         }
     }
 
@@ -64,6 +68,12 @@ class CreateAccountViewController: UIViewController {
     }
 
     @IBAction func pickBackgroundColorPressed(_ sender: Any) {
+        let r = CGFloat(arc4random_uniform(255)) / 255
+        let g = CGFloat(arc4random_uniform(255)) / 255
+        let b = CGFloat(arc4random_uniform(255)) / 255
+
+        backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        self.userImageView.backgroundColor = backgroundColor
     }
     
 
