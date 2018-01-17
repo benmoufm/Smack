@@ -17,6 +17,7 @@
 		864086EF200E5E2500F71DF1 /* AuthentificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864086EE200E5E2500F71DF1 /* AuthentificationService.swift */; };
 		864086F1200E69D700F71DF1 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864086F0200E69D700F71DF1 /* RoundedButton.swift */; };
 		864086F3200F898A00F71DF1 /* SessionManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864086F2200F898A00F71DF1 /* SessionManagerService.swift */; };
+		864086F5200F932F00F71DF1 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864086F4200F932F00F71DF1 /* UserDataService.swift */; };
 		86749F81200CABBB003BE601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86749F80200CABBB003BE601 /* AppDelegate.swift */; };
 		86749F86200CABBB003BE601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86749F84200CABBB003BE601 /* Main.storyboard */; };
 		86749F88200CABBB003BE601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86749F87200CABBB003BE601 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		864086EE200E5E2500F71DF1 /* AuthentificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationService.swift; sourceTree = "<group>"; };
 		864086F0200E69D700F71DF1 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		864086F2200F898A00F71DF1 /* SessionManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerService.swift; sourceTree = "<group>"; };
+		864086F4200F932F00F71DF1 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		86749F7D200CABBB003BE601 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86749F80200CABBB003BE601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86749F85200CABBB003BE601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				864086EE200E5E2500F71DF1 /* AuthentificationService.swift */,
 				864086F2200F898A00F71DF1 /* SessionManagerService.swift */,
+				864086F4200F932F00F71DF1 /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				86749F81200CABBB003BE601 /* AppDelegate.swift in Sources */,
 				864086E8200D03D200F71DF1 /* Constants.swift in Sources */,
 				864086E1200CBBD900F71DF1 /* ChatViewController.swift in Sources */,
+				864086F5200F932F00F71DF1 /* UserDataService.swift in Sources */,
 				864086EC200D0CAF00F71DF1 /* CreateAccountViewController.swift in Sources */,
 				864086EF200E5E2500F71DF1 /* AuthentificationService.swift in Sources */,
 				864086E5200CC1B300F71DF1 /* GradientView.swift in Sources */,
