@@ -8,10 +8,12 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class AuthentificationService {
     static let instance = AuthentificationService()
 
+    let sessionManager = SessionManagerService.instance.sessionManager
     let defaults = UserDefaults.standard
     var isLoggedIn: Bool {
         get {
@@ -40,21 +42,49 @@ class AuthentificationService {
 
     func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
         let lowerCaseEmail = email.lowercased()
-        let header = ["ContentType": "application/json; charset=utf-8"]
         let body: [String: Any] = [
             "email": lowerCaseEmail,
             "password": password
         ]
-        let sessionManager = SessionManagerService.instance.sessionManager
         sessionManager.request(URL_REGISTER,
                           method: .post,
                           parameters: body,
                           encoding: JSONEncoding.default,
-                          headers: header)
+                          headers: HEADER)
             .responseString() {
                 (response) in
                 if response.result.error == nil {
                     completion(true)
+                } else {
+                    completion(false)
+                    debugPrint(response.result.error as Any)
+                }
+        }
+    }
+
+    func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
+        let lowerCaseEmail = email.lowercased()
+        let body: [String: Any] = [
+            "email": lowerCaseEmail,
+            "password": password
+        ]
+        sessionManager.request(URL_LOGIN,
+                               method: .post,
+                               parameters: body,
+                               encoding: JSONEncoding.default,
+                               headers: HEADER)
+            .responseJSON { (response) in
+                if response.result.error == nil {
+                    guard let data = response.data else { return }
+                    do {
+                        let json = try JSON(data: data)
+                        self.userEmail = json["user"].stringValue
+                        self.authentificationToken = json["token"].stringValue
+                        completion(true)
+                    } catch {
+                        completion(false)
+                        debugPrint("Error JSON parsing")
+                    }
                 } else {
                     completion(false)
                     debugPrint(response.result.error as Any)
