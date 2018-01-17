@@ -52,6 +52,11 @@ class AvatarPickerViewController: UIViewController, UICollectionViewDelegate,
         return CGSize(width: cellDimension, height: cellDimension)
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        UserDataService.instance.setAvatarName(avatarName: "\(avatarType.description)\(indexPath.item)")
+        dismiss(animated: true, completion: nil)
+    }
+
     @IBAction func segmantedControlChanged(_ sender: Any) {
         if segmentedControl.selectedSegmentIndex == 0 {
             avatarType = .dark
