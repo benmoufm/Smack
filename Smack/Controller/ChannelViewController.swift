@@ -12,6 +12,7 @@ class ChannelViewController: UIViewController {
 
     // Outlets
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var userImageView: CircleImageView!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
 
     override func viewDidLoad() {
@@ -28,6 +29,14 @@ class ChannelViewController: UIViewController {
     }
 
     @objc func userDataDidChange(_ notification: Notification) {
-
+        if AuthentificationService.instance.isLoggedIn {
+            loginButton.setTitle(UserDataService.instance.name, for: .normal)
+            userImageView.image = UIImage(named: UserDataService.instance.avatarName)
+            userImageView.backgroundColor = UserDataService.instance.returnUIColor(compoments: UserDataService.instance.avatarColor)
+        } else {
+            loginButton.setTitle("Login", for: .normal)
+            userImageView.image = UIImage(named: "menuProfileIcon")
+            userImageView.backgroundColor = UIColor.clear
+        }
     }
 }

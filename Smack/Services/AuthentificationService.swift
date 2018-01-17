@@ -125,6 +125,7 @@ class AuthentificationService {
                                                              avatarName: avatarName,
                                                              email: email,
                                                              name: name)
+                        self.isLoggedIn = true
                         completion(true)
                     } catch {
                         completion(false)
