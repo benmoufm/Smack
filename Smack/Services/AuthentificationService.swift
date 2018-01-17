@@ -45,7 +45,8 @@ class AuthentificationService {
             "email": lowerCaseEmail,
             "password": password
         ]
-        Alamofire.request(URL_REGISTER,
+        let sessionManager = SessionManagerService.instance.sessionManager
+        sessionManager.request(URL_REGISTER,
                           method: .post,
                           parameters: body,
                           encoding: JSONEncoding.default,
