@@ -23,6 +23,7 @@ class CreateAccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -76,6 +77,21 @@ class CreateAccountViewController: UIViewController {
         UIView.animate(withDuration: 0.2) {
             self.userImageView.backgroundColor = self.backgroundColor
         }
+    }
+
+    func setupView() {
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: "username",
+                                                                     attributes: [
+                                                                        NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder
+            ])
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "email",
+                                                                     attributes: [
+                                                                        NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder
+            ])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "password",
+                                                                     attributes: [
+                                                                        NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder
+            ])
     }
 
 }
