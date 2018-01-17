@@ -15,7 +15,8 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userImageView: UIImageView!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // Variables
     var avatarName = "profileDefault"
     var avatarColor = "[0.5, 0.5, 0.5, 1]"
@@ -41,6 +42,8 @@ class CreateAccountViewController: UIViewController {
     }
 
     @IBAction func createAccountPressed(_ sender: Any) {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         guard let name = usernameTextField.text, usernameTextField.text != "" else { return }
         guard let email = emailTextField.text, emailTextField.text != "" else { return }
         guard let password = passwordTextField.text, passwordTextField.text != "" else { return }
@@ -54,8 +57,8 @@ class CreateAccountViewController: UIViewController {
                                                              avatarColor: self.avatarColor,
                                                              completion: { (success) in
                                                                 if success {
-                                                                    print(UserDataService.instance.name,
-                                                                          UserDataService.instance.avatarName)
+                                                                    self.activityIndicator.isHidden = true
+                                                                    self.activityIndicator.stopAnimating()
                                                                     self.performSegue(withIdentifier: UNWIND, sender: nil)
                                                                 }
                     })
@@ -80,6 +83,7 @@ class CreateAccountViewController: UIViewController {
     }
 
     func setupView() {
+        activityIndicator.isHidden = true
         usernameTextField.attributedPlaceholder = NSAttributedString(string: "username",
                                                                      attributes: [
                                                                         NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder

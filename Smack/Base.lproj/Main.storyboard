@@ -449,14 +449,20 @@
                                     <action selector="pickBackgroundColorPressed:" destination="x5x-NV-Z8Q" eventType="touchUpInside" id="kqt-Tj-cVg"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="DLf-Rf-awB">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.2901960784" green="0.30196078430000001" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ngn-Cp-lgh" firstAttribute="top" secondItem="Ix6-l5-mVh" secondAttribute="top" id="5BM-jw-lUE"/>
                             <constraint firstItem="ngn-Cp-lgh" firstAttribute="width" secondItem="Ix6-l5-mVh" secondAttribute="width" id="7X0-fn-nOf"/>
                             <constraint firstItem="8si-rG-6QS" firstAttribute="centerX" secondItem="Q7f-5I-4MC" secondAttribute="centerX" id="BiP-Ys-bWf"/>
+                            <constraint firstItem="DLf-Rf-awB" firstAttribute="centerX" secondItem="Q7f-5I-4MC" secondAttribute="centerX" id="CGO-wU-xcz"/>
                             <constraint firstItem="xwd-0R-SkJ" firstAttribute="centerX" secondItem="Q7f-5I-4MC" secondAttribute="centerX" id="Ejm-Fn-rpJ"/>
                             <constraint firstItem="Ix6-l5-mVh" firstAttribute="top" secondItem="8si-rG-6QS" secondAttribute="bottom" constant="40" id="HVt-R9-TXJ"/>
+                            <constraint firstItem="DLf-Rf-awB" firstAttribute="centerY" secondItem="Q7f-5I-4MC" secondAttribute="centerY" constant="-100" id="JVX-iZ-nax"/>
                             <constraint firstItem="4vr-sS-AGN" firstAttribute="trailing" secondItem="5jJ-8H-pPP" secondAttribute="trailing" constant="16" id="K3z-mj-Gmq"/>
                             <constraint firstItem="ngn-Cp-lgh" firstAttribute="centerX" secondItem="Q7f-5I-4MC" secondAttribute="centerX" id="SSi-tR-Nht"/>
                             <constraint firstItem="4vr-sS-AGN" firstAttribute="bottom" secondItem="xwd-0R-SkJ" secondAttribute="bottom" constant="20" id="Vx2-Cg-2Nh"/>
@@ -471,6 +477,7 @@
                         <viewLayoutGuide key="safeArea" id="4vr-sS-AGN"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="DLf-Rf-awB" id="QLW-Pq-hSo"/>
                         <outlet property="emailTextField" destination="K3H-yX-XiE" id="4QE-IX-LFB"/>
                         <outlet property="passwordTextField" destination="K0C-8j-1bZ" id="xVC-xd-e5n"/>
                         <outlet property="userImageView" destination="Ix6-l5-mVh" id="pY5-JD-DNz"/>
