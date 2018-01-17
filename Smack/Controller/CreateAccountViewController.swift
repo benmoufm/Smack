@@ -96,6 +96,12 @@ class CreateAccountViewController: UIViewController {
                                                                      attributes: [
                                                                         NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder
             ])
+        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountViewController.handleTap))
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func handleTap() {
+        view.endEditing(true)
     }
 
 }
