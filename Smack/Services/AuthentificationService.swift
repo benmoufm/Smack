@@ -96,7 +96,7 @@ class AuthentificationService {
                  avatarColor: String, completion: @escaping CompletionHandler) {
         let lowerCaseEmail = email.lowercased()
         let body: [String: Any] = [
-            "name": name
+            "name": name,
             "email": lowerCaseEmail,
             "avatarName": avatarName,
             "avatarColor": avatarColor
@@ -111,7 +111,7 @@ class AuthentificationService {
                                encoding: JSONEncoding.default,
                                headers: header)
             .responseJSON { (response) in
-                if response.result.error != nil {
+                if response.result.error == nil {
                     guard let data = response.data else { return }
                     do {
                         let json = try JSON(data: data)
