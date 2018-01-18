@@ -26,6 +26,7 @@
 		86B811A52010987100ABA454 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86B811A32010987100ABA454 /* ProfileViewController.xib */; };
 		86B811A82010A9CE00ABA454 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B811A72010A9CE00ABA454 /* MessageService.swift */; };
 		86B811AA2010A9FE00ABA454 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B811A92010A9FE00ABA454 /* ChannelModel.swift */; };
+		86B811AC2010AE6000ABA454 /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B811AB2010AE6000ABA454 /* ChannelTableViewCell.swift */; };
 		86EF048E200F9DF5003713A1 /* AvatarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF048D200F9DF5003713A1 /* AvatarPickerViewController.swift */; };
 		86EF0490200FA071003713A1 /* AvatarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF048F200FA070003713A1 /* AvatarCollectionViewCell.swift */; };
 		86EF0492200FB2B0003713A1 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF0491200FB2B0003713A1 /* CircleImageView.swift */; };
@@ -57,6 +58,7 @@
 		86B811A32010987100ABA454 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		86B811A72010A9CE00ABA454 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		86B811A92010A9FE00ABA454 /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
+		86B811AB2010AE6000ABA454 /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
 		86EF048D200F9DF5003713A1 /* AvatarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerViewController.swift; sourceTree = "<group>"; };
 		86EF048F200FA070003713A1 /* AvatarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionViewCell.swift; sourceTree = "<group>"; };
 		86EF0491200FB2B0003713A1 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				864086F0200E69D700F71DF1 /* RoundedButton.swift */,
 				86EF048F200FA070003713A1 /* AvatarCollectionViewCell.swift */,
 				86EF0491200FB2B0003713A1 /* CircleImageView.swift */,
+				86B811AB2010AE6000ABA454 /* ChannelTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				864086EA200D08FF00F71DF1 /* LoginViewController.swift in Sources */,
+				86B811AC2010AE6000ABA454 /* ChannelTableViewCell.swift in Sources */,
 				864086F1200E69D700F71DF1 /* RoundedButton.swift in Sources */,
 				864086F3200F898A00F71DF1 /* SessionManagerService.swift in Sources */,
 				86749F81200CABBB003BE601 /* AppDelegate.swift in Sources */,
