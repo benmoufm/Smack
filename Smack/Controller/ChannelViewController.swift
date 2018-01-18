@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ChannelViewController: UIViewController {
+class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // Outlets
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var userImageView: CircleImageView!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
+    @IBOutlet weak var channelTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,5 +53,23 @@ class ChannelViewController: UIViewController {
 
     @objc func userDataDidChange(_ notification: Notification) {
         setupUserInfo()
+    }
+
+    // MARK: - Table view delegate
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.channels.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? ChannelTableViewCell {
+            let channel = MessageService.instance.channels[indexPath.row]
+            cell.configureCell(channel: channel)
+            return cell
+        }
+        return ChannelTableViewCell()
     }
 }
