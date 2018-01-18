@@ -80,6 +80,7 @@ class AuthentificationService {
                         let json = try JSON(data: data)
                         self.userEmail = json["user"].stringValue
                         self.authentificationToken = json["token"].stringValue
+                        self.isLoggedIn = true
                         completion(true)
                     } catch {
                         completion(false)
@@ -101,31 +102,16 @@ class AuthentificationService {
             "avatarName": avatarName,
             "avatarColor": avatarColor
         ]
-        let header = [
-            "Authorization": "Bearer \(AuthentificationService.instance.authentificationToken)",
-            "ContentType": "application/json; charset=utf-8"
-        ]
         sessionManager.request(URL_USER_ADD,
                                method: .post,
                                parameters: body,
                                encoding: JSONEncoding.default,
-                               headers: header)
+                               headers: BEARER_HEADER)
             .responseJSON { (response) in
                 if response.result.error == nil {
                     guard let data = response.data else { return }
                     do {
-                        let json = try JSON(data: data)
-                        let id = json["_id"].stringValue
-                        let avatarColor = json["avatarColor"].stringValue
-                        let avatarName = json["avatarName"].stringValue
-                        let email = json["email"].stringValue
-                        let name = json["name"].stringValue
-                        UserDataService.instance.setUserData(id: id,
-                                                             avatarColor: avatarColor,
-                                                             avatarName: avatarName,
-                                                             email: email,
-                                                             name: name)
-                        self.isLoggedIn = true
+                        try self.setUserInfo(data: data)
                         completion(true)
                     } catch {
                         completion(false)
@@ -137,4 +123,53 @@ class AuthentificationService {
                 }
         }
     }
+
+    func setUserInfo(data: Data) throws {
+        let json = try JSON(data: data)
+        let id = json["_id"].stringValue
+        let avatarColor = json["avatarColor"].stringValue
+        let avatarName = json["avatarName"].stringValue
+        let email = json["email"].stringValue
+        let name = json["name"].stringValue
+        UserDataService.instance.setUserData(id: id,
+                                             avatarColor: avatarColor,
+                                             avatarName: avatarName,
+                                             email: email,
+                                             name: name)
+    }
+
+    func findUserByEmail(completion: @escaping CompletionHandler) {
+        sessionManager.request("\(URL_USER_BY_EMAIL)\(userEmail)",
+            method: .get,
+            parameters: nil,
+            encoding: JSONEncoding.default,
+            headers: BEARER_HEADER)
+            .responseJSON { (response) in
+                if response.result.error == nil {
+                    guard let data = response.data else { return }
+                    do {
+                        try self.setUserInfo(data: data)
+                        completion(true)
+                    } catch {
+                        completion(false)
+                        debugPrint("Error JSON parsing")
+                    }
+                } else {
+                    completion(false)
+                    debugPrint(response.result.error as Any)
+                }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
