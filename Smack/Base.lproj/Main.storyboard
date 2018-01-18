@@ -183,8 +183,8 @@
                         <viewLayoutGuide key="safeArea" id="jSe-v4-gjk"/>
                     </view>
                     <connections>
-                        <outlet property="channelTableView" destination="B6o-65-WGi" id="Tjg-hI-yls"/>
                         <outlet property="loginButton" destination="1ha-qk-cDN" id="jZu-Zv-1m2"/>
+                        <outlet property="tableView" destination="B6o-65-WGi" id="bvs-Nc-tJp"/>
                         <outlet property="userImageView" destination="pEW-tW-vie" id="wMn-0j-Nz1"/>
                         <segue destination="4VL-zC-RXi" kind="show" identifier="toLogin" id="US2-rE-PeX"/>
                     </connections>

@@ -14,15 +14,23 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var userImageView: CircleImageView!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
-    @IBOutlet weak var channelTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(ChannelViewController.userDataDidChange(_:)),
                                                name: NOTIF_USER_DATA_DID_CHANGE,
                                                object: nil)
+
+        SocketService.instance.getChannel { (success) in
+            if success {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
