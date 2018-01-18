@@ -14,6 +14,7 @@ class MessageService {
     static let instance = MessageService()
 
     var channels = [ChannelModel]()
+    var selectedChannel: ChannelModel?
     let sessionManager = SessionManagerService.instance.sessionManager
 
     func findAllChannels(completion: @escaping CompletionHandler) {
@@ -38,5 +39,9 @@ class MessageService {
                     debugPrint(response.result.error as Any)
                 }
         }
+    }
+
+    func clearChannel() {
+        channels.removeAll()
     }
 }

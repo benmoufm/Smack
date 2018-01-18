@@ -38,9 +38,11 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     @IBAction func addChannelButtonPressed(_ sender: Any) {
-        let addChannel = AddChannelViewController()
-        addChannel.modalPresentationStyle = .custom
-        present(addChannel, animated: true, completion: nil)
+        if AuthentificationService.instance.isLoggedIn {
+            let addChannel = AddChannelViewController()
+            addChannel.modalPresentationStyle = .custom
+            present(addChannel, animated: true, completion: nil)
+        }
     }
 
     func setupUserInfo() {
@@ -52,6 +54,7 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
             loginButton.setTitle("Login", for: .normal)
             userImageView.image = UIImage(named: "menuProfileIcon")
             userImageView.backgroundColor = UIColor.clear
+            tableView.reloadData()
         }
     }
 
