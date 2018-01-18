@@ -18,6 +18,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddChannelViewController" customModule="Smack" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="9t4-Pl-pZg" id="jrj-Ne-Gq2"/>
+                <outlet property="descriptionTextField" destination="qIK-b1-aH1" id="FZ8-8O-Vpu"/>
+                <outlet property="nameTextField" destination="TOF-Qn-Ai2" id="LAu-5R-QhX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -55,10 +58,16 @@
                                     <real key="value" value="5"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="createChannelButtonPressed:" destination="-1" eventType="touchUpInside" id="2aT-ZJ-TSc"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxZ-Z1-0so">
                             <rect key="frame" x="299" y="8" width="28" height="28"/>
                             <state key="normal" image="closeButton"/>
+                            <connections>
+                                <action selector="closeButtonPressed:" destination="-1" eventType="touchUpInside" id="EnK-JB-AeV"/>
+                            </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="VHU-kC-9gw">
                             <rect key="frame" x="43" y="107" width="250" height="86"/>
