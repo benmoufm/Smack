@@ -22,6 +22,8 @@
 		86749F86200CABBB003BE601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86749F84200CABBB003BE601 /* Main.storyboard */; };
 		86749F88200CABBB003BE601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86749F87200CABBB003BE601 /* Assets.xcassets */; };
 		86749F8B200CABBB003BE601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86749F89200CABBB003BE601 /* LaunchScreen.storyboard */; };
+		86B811A42010987100ABA454 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B811A22010987100ABA454 /* ProfileViewController.swift */; };
+		86B811A52010987100ABA454 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86B811A32010987100ABA454 /* ProfileViewController.xib */; };
 		86EF048E200F9DF5003713A1 /* AvatarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF048D200F9DF5003713A1 /* AvatarPickerViewController.swift */; };
 		86EF0490200FA071003713A1 /* AvatarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF048F200FA070003713A1 /* AvatarCollectionViewCell.swift */; };
 		86EF0492200FB2B0003713A1 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF0491200FB2B0003713A1 /* CircleImageView.swift */; };
@@ -49,6 +51,8 @@
 		86749F87200CABBB003BE601 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86749F8A200CABBB003BE601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86749F8C200CABBB003BE601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86B811A22010987100ABA454 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		86B811A32010987100ABA454 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		86EF048D200F9DF5003713A1 /* AvatarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerViewController.swift; sourceTree = "<group>"; };
 		86EF048F200FA070003713A1 /* AvatarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionViewCell.swift; sourceTree = "<group>"; };
 		86EF0491200FB2B0003713A1 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				864086E9200D08FF00F71DF1 /* LoginViewController.swift */,
 				864086EB200D0CAF00F71DF1 /* CreateAccountViewController.swift */,
 				86EF048D200F9DF5003713A1 /* AvatarPickerViewController.swift */,
+				86B811A22010987100ABA454 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 		86749F7F200CABBB003BE601 /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				86B811A62010988E00ABA454 /* XIBs */,
 				864086ED200E5E0300F71DF1 /* Services */,
 				864086E6200D03C400F71DF1 /* Utilities */,
 				864086D8200CB8B300F71DF1 /* Supported Files */,
@@ -177,6 +183,14 @@
 				86749F8C200CABBB003BE601 /* Info.plist */,
 			);
 			path = Smack;
+			sourceTree = "<group>";
+		};
+		86B811A62010988E00ABA454 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				86B811A32010987100ABA454 /* ProfileViewController.xib */,
+			);
+			path = XIBs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +258,7 @@
 			files = (
 				86749F8B200CABBB003BE601 /* LaunchScreen.storyboard in Resources */,
 				86749F88200CABBB003BE601 /* Assets.xcassets in Resources */,
+				86B811A52010987100ABA454 /* ProfileViewController.xib in Resources */,
 				86749F86200CABBB003BE601 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +336,7 @@
 				86749F81200CABBB003BE601 /* AppDelegate.swift in Sources */,
 				864086E8200D03D200F71DF1 /* Constants.swift in Sources */,
 				86EF0490200FA071003713A1 /* AvatarCollectionViewCell.swift in Sources */,
+				86B811A42010987100ABA454 /* ProfileViewController.swift in Sources */,
 				864086E1200CBBD900F71DF1 /* ChatViewController.swift in Sources */,
 				864086F5200F932F00F71DF1 /* UserDataService.swift in Sources */,
 				864086EC200D0CAF00F71DF1 /* CreateAccountViewController.swift in Sources */,
