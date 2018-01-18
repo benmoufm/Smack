@@ -29,6 +29,7 @@
 		86B811AC2010AE6000ABA454 /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B811AB2010AE6000ABA454 /* ChannelTableViewCell.swift */; };
 		86B811AF2010B21400ABA454 /* AddChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B811AD2010B21400ABA454 /* AddChannelViewController.swift */; };
 		86B811B02010B21400ABA454 /* AddChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86B811AE2010B21400ABA454 /* AddChannelViewController.xib */; };
+		86B811B22010B84C00ABA454 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B811B12010B84C00ABA454 /* SocketService.swift */; };
 		86EF048E200F9DF5003713A1 /* AvatarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF048D200F9DF5003713A1 /* AvatarPickerViewController.swift */; };
 		86EF0490200FA071003713A1 /* AvatarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF048F200FA070003713A1 /* AvatarCollectionViewCell.swift */; };
 		86EF0492200FB2B0003713A1 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF0491200FB2B0003713A1 /* CircleImageView.swift */; };
@@ -63,6 +64,7 @@
 		86B811AB2010AE6000ABA454 /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
 		86B811AD2010B21400ABA454 /* AddChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelViewController.swift; sourceTree = "<group>"; };
 		86B811AE2010B21400ABA454 /* AddChannelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelViewController.xib; sourceTree = "<group>"; };
+		86B811B12010B84C00ABA454 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		86EF048D200F9DF5003713A1 /* AvatarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerViewController.swift; sourceTree = "<group>"; };
 		86EF048F200FA070003713A1 /* AvatarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionViewCell.swift; sourceTree = "<group>"; };
 		86EF0491200FB2B0003713A1 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				864086F2200F898A00F71DF1 /* SessionManagerService.swift */,
 				864086F4200F932F00F71DF1 /* UserDataService.swift */,
 				86B811A72010A9CE00ABA454 /* MessageService.swift */,
+				86B811B12010B84C00ABA454 /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				864086E1200CBBD900F71DF1 /* ChatViewController.swift in Sources */,
 				864086F5200F932F00F71DF1 /* UserDataService.swift in Sources */,
 				864086EC200D0CAF00F71DF1 /* CreateAccountViewController.swift in Sources */,
+				86B811B22010B84C00ABA454 /* SocketService.swift in Sources */,
 				864086EF200E5E2500F71DF1 /* AuthentificationService.swift in Sources */,
 				864086E5200CC1B300F71DF1 /* GradientView.swift in Sources */,
 				864086E3200CBBEA00F71DF1 /* ChannelViewController.swift in Sources */,
