@@ -24,6 +24,22 @@ class ChannelViewController: UIViewController {
                                                object: nil)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        setupUserInfo()
+    }
+
+    func setupUserInfo() {
+        if AuthentificationService.instance.isLoggedIn {
+            loginButton.setTitle(UserDataService.instance.name, for: .normal)
+            userImageView.image = UIImage(named: UserDataService.instance.avatarName)
+            userImageView.backgroundColor = UserDataService.instance.returnUIColor(compoments: UserDataService.instance.avatarColor)
+        } else {
+            loginButton.setTitle("Login", for: .normal)
+            userImageView.image = UIImage(named: "menuProfileIcon")
+            userImageView.backgroundColor = UIColor.clear
+        }
+    }
+
     @IBAction func loginButtonPressend(_ sender: Any) {
         if AuthentificationService.instance.isLoggedIn {
             let profile = ProfileViewController()
@@ -35,14 +51,6 @@ class ChannelViewController: UIViewController {
     }
 
     @objc func userDataDidChange(_ notification: Notification) {
-        if AuthentificationService.instance.isLoggedIn {
-            loginButton.setTitle(UserDataService.instance.name, for: .normal)
-            userImageView.image = UIImage(named: UserDataService.instance.avatarName)
-            userImageView.backgroundColor = UserDataService.instance.returnUIColor(compoments: UserDataService.instance.avatarColor)
-        } else {
-            loginButton.setTitle("Login", for: .normal)
-            userImageView.image = UIImage(named: "menuProfileIcon")
-            userImageView.backgroundColor = UIColor.clear
-        }
+        setupUserInfo()
     }
 }

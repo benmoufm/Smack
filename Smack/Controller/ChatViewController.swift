@@ -20,6 +20,14 @@ class ChatViewController: UIViewController {
                              for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+
+        if AuthentificationService.instance.isLoggedIn {
+            AuthentificationService.instance.findUserByEmail(completion: { (success) in
+                if success {
+                    NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+                }
+            })
+        }
     }
 
 }
