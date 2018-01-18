@@ -18,15 +18,23 @@ class AddChannelViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
     }
 
     @IBAction func closeButtonPressed(_ sender: Any) {
-
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func createChannelButtonPressed(_ sender: Any) {
-        
+
+    }
+
+    func setupView() {
+        let closeTouch = UITapGestureRecognizer(target: self, action: #selector(AddChannelViewController.closeTap(_:)))
+        backgroundView.addGestureRecognizer(closeTouch)
+    }
+
+    @objc func closeTap(_ recognizer: UITapGestureRecognizer) {
+        dismiss(animated: true, completion: nil)
     }
 }
