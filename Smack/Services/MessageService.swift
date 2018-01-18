@@ -33,7 +33,7 @@ class MessageService {
                         completion(false)
                         debugPrint(error as Any)
                     }
-                    print(self.channels)
+                    NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                 } else {
                     completion(false)
                     debugPrint(response.result.error as Any)

@@ -25,6 +25,10 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
                                                selector: #selector(ChannelViewController.userDataDidChange(_:)),
                                                name: NOTIF_USER_DATA_DID_CHANGE,
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ChannelViewController.channelsLoaded(_:)),
+                                               name: NOTIF_CHANNELS_LOADED,
+                                               object: nil)
 
         SocketService.instance.getChannel { (success) in
             if success {
@@ -72,6 +76,10 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
         setupUserInfo()
     }
 
+    @objc func channelsLoaded(_ notification: Notification) {
+        tableView.reloadData()
+    }
+
     // MARK: - Table view delegate
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -89,4 +97,35 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         return ChannelTableViewCell()
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = MessageService.instance.channels[indexPath.row]
+        MessageService.instance.selectedChannel = channel
+        NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
+
+        revealViewController().revealToggle(animated: true)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

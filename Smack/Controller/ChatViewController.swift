@@ -12,6 +12,7 @@ class ChatViewController: UIViewController {
 
     //MARK: - Outlets
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var channelNameLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,15 @@ class ChatViewController: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
 
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ChatViewController.userDataDidChange(_:)),
+                                               name: NOTIF_USER_DATA_DID_CHANGE,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ChatViewController.channelSelected(_:)),
+                                               name: NOTIF_CHANNEL_SELECTED,
+                                               object: nil)
+
         if AuthentificationService.instance.isLoggedIn {
             AuthentificationService.instance.findUserByEmail(completion: { (success) in
                 if success {
@@ -28,9 +38,29 @@ class ChatViewController: UIViewController {
                 }
             })
         }
+    }
+
+    @objc func userDataDidChange(_ notification: Notification) {
+        if AuthentificationService.instance.isLoggedIn {
+            onLoginGetMessages()
+        } else {
+            channelNameLabel.text = "Please Log In"
+        }
+    }
+
+    @objc func channelSelected(_ notification: Notification) {
+        updateWithChannel()
+    }
+
+    func updateWithChannel() {
+        let channelName = MessageService.instance.selectedChannel?.name ?? ""
+        channelNameLabel.text = "#\(channelName)"
+    }
+
+    func onLoginGetMessages() {
         MessageService.instance.findAllChannels { (success) in
             if success {
-                
+                // TODO: Stuff with channels
             }
         }
     }
