@@ -20,6 +20,7 @@
 		864086F5200F932F00F71DF1 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864086F4200F932F00F71DF1 /* UserDataService.swift */; };
 		867427A02011E6B4006E501E /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8674279F2011E6B4006E501E /* MessageModel.swift */; };
 		867427A22011EFD9006E501E /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427A12011EFD8006E501E /* KeyboardBoundView.swift */; };
+		867427A42011F20C006E501E /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867427A32011F20C006E501E /* MessageTableViewCell.swift */; };
 		86749F81200CABBB003BE601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86749F80200CABBB003BE601 /* AppDelegate.swift */; };
 		86749F86200CABBB003BE601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86749F84200CABBB003BE601 /* Main.storyboard */; };
 		86749F88200CABBB003BE601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86749F87200CABBB003BE601 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		864086F4200F932F00F71DF1 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		8674279F2011E6B4006E501E /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		867427A12011EFD8006E501E /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		867427A32011F20C006E501E /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		86749F7D200CABBB003BE601 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86749F80200CABBB003BE601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86749F85200CABBB003BE601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				86EF0491200FB2B0003713A1 /* CircleImageView.swift */,
 				86B811AB2010AE6000ABA454 /* ChannelTableViewCell.swift */,
 				867427A12011EFD8006E501E /* KeyboardBoundView.swift */,
+				867427A32011F20C006E501E /* MessageTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				867427A22011EFD9006E501E /* KeyboardBoundView.swift in Sources */,
 				864086F1200E69D700F71DF1 /* RoundedButton.swift in Sources */,
 				864086F3200F898A00F71DF1 /* SessionManagerService.swift in Sources */,
+				867427A42011F20C006E501E /* MessageTableViewCell.swift in Sources */,
 				86749F81200CABBB003BE601 /* AppDelegate.swift in Sources */,
 				864086E8200D03D200F71DF1 /* Constants.swift in Sources */,
 				86EF0490200FA071003713A1 /* AvatarCollectionViewCell.swift in Sources */,
