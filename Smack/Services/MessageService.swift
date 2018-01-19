@@ -15,6 +15,7 @@ class MessageService {
 
     var messages = [MessageModel]()
     var channels = [ChannelModel]()
+    var unreadChannels = [String]()
     var selectedChannel: ChannelModel?
     let sessionManager = SessionManagerService.instance.sessionManager
 
@@ -84,19 +85,6 @@ class MessageService {
                 }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     func clearMessages() {
         messages.removeAll()
