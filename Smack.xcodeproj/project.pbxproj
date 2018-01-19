@@ -18,6 +18,7 @@
 		864086F1200E69D700F71DF1 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864086F0200E69D700F71DF1 /* RoundedButton.swift */; };
 		864086F3200F898A00F71DF1 /* SessionManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864086F2200F898A00F71DF1 /* SessionManagerService.swift */; };
 		864086F5200F932F00F71DF1 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864086F4200F932F00F71DF1 /* UserDataService.swift */; };
+		867427A02011E6B4006E501E /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8674279F2011E6B4006E501E /* MessageModel.swift */; };
 		86749F81200CABBB003BE601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86749F80200CABBB003BE601 /* AppDelegate.swift */; };
 		86749F86200CABBB003BE601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86749F84200CABBB003BE601 /* Main.storyboard */; };
 		86749F88200CABBB003BE601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86749F87200CABBB003BE601 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		864086F0200E69D700F71DF1 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		864086F2200F898A00F71DF1 /* SessionManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerService.swift; sourceTree = "<group>"; };
 		864086F4200F932F00F71DF1 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		8674279F2011E6B4006E501E /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		86749F7D200CABBB003BE601 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86749F80200CABBB003BE601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86749F85200CABBB003BE601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				86B811A92010A9FE00ABA454 /* ChannelModel.swift */,
+				8674279F2011E6B4006E501E /* MessageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				864086E5200CC1B300F71DF1 /* GradientView.swift in Sources */,
 				864086E3200CBBEA00F71DF1 /* ChannelViewController.swift in Sources */,
 				86EF048E200F9DF5003713A1 /* AvatarPickerViewController.swift in Sources */,
+				867427A02011E6B4006E501E /* MessageModel.swift in Sources */,
 				86EF0492200FB2B0003713A1 /* CircleImageView.swift in Sources */,
 				864086DC200CB8E600F71DF1 /* SWRevealViewController.m in Sources */,
 			);
