@@ -106,26 +106,3 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
         revealViewController().revealToggle(animated: true)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
