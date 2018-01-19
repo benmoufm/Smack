@@ -71,12 +71,30 @@
                                     <constraint firstAttribute="height" constant="75" id="rbh-Ed-9Pp"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5eY-6i-ga7">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bMS-bF-8B2"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJs-b8-7pB">
+                                <rect key="frame" x="337" y="632" width="30" height="30"/>
+                                <state key="normal" image="send"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VpQ-Cc-Vgw" firstAttribute="trailing" secondItem="qxE-tt-kQE" secondAttribute="trailing" id="3mn-Xv-Sm2"/>
+                            <constraint firstItem="tJs-b8-7pB" firstAttribute="centerY" secondItem="5eY-6i-ga7" secondAttribute="centerY" id="HFR-2a-avl"/>
                             <constraint firstItem="VpQ-Cc-Vgw" firstAttribute="leading" secondItem="qxE-tt-kQE" secondAttribute="leading" id="KN7-KN-N7n"/>
+                            <constraint firstItem="5eY-6i-ga7" firstAttribute="bottom" secondItem="qxE-tt-kQE" secondAttribute="bottom" id="OMf-67-GIf"/>
+                            <constraint firstItem="5eY-6i-ga7" firstAttribute="leading" secondItem="qxE-tt-kQE" secondAttribute="leading" id="QzT-UT-tDw"/>
+                            <constraint firstItem="qxE-tt-kQE" firstAttribute="trailing" secondItem="5eY-6i-ga7" secondAttribute="trailing" id="VWh-gD-OhX"/>
                             <constraint firstItem="VpQ-Cc-Vgw" firstAttribute="top" secondItem="eeT-C7-RQO" secondAttribute="top" id="cwG-3s-mIz"/>
+                            <constraint firstItem="qxE-tt-kQE" firstAttribute="trailing" secondItem="tJs-b8-7pB" secondAttribute="trailing" constant="8" id="ien-V5-5r0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qxE-tt-kQE"/>
                     </view>
@@ -608,6 +626,7 @@
         <image name="closeButton" width="28" height="28"/>
         <image name="menuProfileIcon" width="99" height="99"/>
         <image name="profileDefault" width="192" height="192"/>
+        <image name="send" width="30" height="30"/>
         <image name="smackBack" width="28" height="28"/>
         <image name="smackBurger" width="40" height="40"/>
         <image name="smackLogo" width="48" height="40"/>
