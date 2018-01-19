@@ -91,7 +91,7 @@
                                 <rect key="frame" x="0.0" y="75" width="375" height="522"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Pix-ek-ZFp" customClass="MessageTableViewCell" customModule="Smack" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" rowHeight="80" id="Pix-ek-ZFp" customClass="MessageTableViewCell" customModule="Smack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pix-ek-ZFp" id="aG8-d6-nt7">
@@ -168,6 +168,7 @@
                         <outlet property="channelNameLabel" destination="cvY-GW-1zD" id="YGg-zN-dE3"/>
                         <outlet property="menuButton" destination="jxP-RY-Lky" id="p04-zX-eum"/>
                         <outlet property="messageTextField" destination="5eY-6i-ga7" id="JAb-Nb-eLL"/>
+                        <outlet property="tableView" destination="7GE-Ga-Ser" id="6e1-07-PYx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dco-7J-swL" userLabel="First Responder" sceneMemberID="firstResponder"/>
