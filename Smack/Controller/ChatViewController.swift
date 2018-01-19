@@ -16,6 +16,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var typingUserLabel: UILabel!
 
     // Variables
     var isTyping = false
@@ -26,7 +27,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
-        //sendButton.isHidden = true
+
+        sendButton.isHidden = true
+        messageTextField.addTarget(self, action: #selector(ChatViewController.messageBoxEditing), for: .editingChanged)
 
         view.bindToKeyboard()
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatViewController.handleTap))
@@ -62,6 +65,33 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
                     self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
                 }
+            }
+        }
+
+        SocketService.instance.getTypingUsers { (typingUsers) in
+            guard let channelId = MessageService.instance.selectedChannel?._id else { return }
+            var names = ""
+            var numberOfTypers = 0
+
+            for (typingUser, channel) in typingUsers {
+                if typingUser != UserDataService.instance.name && channel == channelId {
+                    if names == "" {
+                        names = typingUser
+                    } else {
+                        names = "\(names), \(typingUser)"
+                    }
+                    numberOfTypers += 1
+                }
+            }
+
+            if numberOfTypers > 0 && AuthentificationService.instance.isLoggedIn {
+                var verb = "is"
+                if numberOfTypers > 1 {
+                    verb = "are"
+                }
+                self.typingUserLabel.text = "\(names) \(verb) typing a message"
+            } else {
+                self.typingUserLabel.text = ""
             }
         }
     }
@@ -111,13 +141,16 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
-    @IBAction func messageBoxEditing(_ sender: Any) {
+    @objc func messageBoxEditing() {
+        guard let channelId = MessageService.instance.selectedChannel?._id else { return }
         if messageTextField.text == "" {
             isTyping = false
             sendButton.isHidden = true
+            SocketService.instance.manager.defaultSocket.emit("stopType", UserDataService.instance.name, channelId)
         } else {
             if isTyping == false {
                 sendButton.isHidden = false
+                SocketService.instance.manager.defaultSocket.emit("startType", UserDataService.instance.name, channelId)
             }
             isTyping = true
         }
@@ -135,6 +168,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if success {
                     self.messageTextField.text = ""
                     self.messageTextField.resignFirstResponder()
+                    SocketService.instance.manager.defaultSocket.emit("stopType", UserDataService.instance.name, channelId)
                 }
             })
         }
