@@ -13,7 +13,8 @@ class ChatViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var channelNameLabel: UILabel!
-
+    @IBOutlet weak var messageTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         menuButton.addTarget(self.revealViewController(),
@@ -79,20 +80,7 @@ class ChatViewController: UIViewController {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @IBAction func sendMessageButtonPressed(_ sender: Any) {
+        
+    }
 }
