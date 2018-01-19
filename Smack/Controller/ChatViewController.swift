@@ -17,6 +17,10 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.bindToKeyboard()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatViewController.handleTap))
+        view.addGestureRecognizer(tap)
+
         menuButton.addTarget(self.revealViewController(),
                              action: #selector(SWRevealViewController.revealToggle(_:)),
                              for: .touchUpInside)
@@ -39,6 +43,10 @@ class ChatViewController: UIViewController {
                 }
             })
         }
+    }
+
+    @objc func handleTap() {
+        view.endEditing(true)
     }
 
     @objc func userDataDidChange(_ notification: Notification) {
