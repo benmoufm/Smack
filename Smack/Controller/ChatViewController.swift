@@ -15,6 +15,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var channelNameLabel: UILabel!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sendButton: UIButton!
+
+    // Variables
+    var isTyping = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
+        //sendButton.isHidden = true
 
         view.bindToKeyboard()
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatViewController.handleTap))
@@ -103,6 +108,18 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             if success {
                 self.tableView.reloadData()
             }
+        }
+    }
+
+    @IBAction func messageBoxEditing(_ sender: Any) {
+        if messageTextField.text == "" {
+            isTyping = false
+            sendButton.isHidden = true
+        } else {
+            if isTyping == false {
+                sendButton.isHidden = false
+            }
+            isTyping = true
         }
     }
 
